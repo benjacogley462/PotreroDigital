@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunga Cake (Paty de Mosquito)</title>
+</head>
+<body>
+
+    <h1>Kunga Cake (Paty de Mosquito)</h1>
+    <p><strong>Porciones:</strong> Rinde según la captura (Aprox. 500.000 insectos por paty)</p>
+
+    <h2>Ingredientes</h2>
+    <ul>
+        <li><strong>Nubes masivas</strong> de millones de mosquitos (y a veces moscas) que se juntan durante la temporada de lluvias cerca del lago Victoria</li>
+        <li><strong>Sartenes u objetos planos</strong> para la captura</li>
+        <li><strong>Aceite o agua</strong> para untar</li>
+        <li>Aceite extra para freír</li>
+    </ul>
+
+    <h2>Pasos de preparación</h2>
+    <ol>
+        <li><strong>Preparar las herramientas:</strong> Unte las sartenes u objetos planos con aceite o agua para crear una superficie adherente. Esto servirá para atrapar a los insectos en masa de manera eficiente.</li>
+        <li><strong>Integrar el relleno:</strong> Pase las sartenes rápidamente por el aire en medio de las nubes masivas de mosquitos. Reúna todos los insectos capturados en un recipiente grande.</li>
+        <li><strong>Cocinar la base:</strong> Comprima y apelmaze con fuerza los cientos de miles de mosquitos hasta formar una pasta o masa compacta de color negro. Moldee la mezcla con las manos formando un círculo grueso (en forma de disco o hamburguesa).</li>
+        <li><strong>Añadir a la cocción:</strong> Calienta una sartén con aceite o una piedra grande a fuego medio. Coloque el paty de mosquito sobre la superficie caliente.</li>
+        <li><strong>Dar la vuelta:</strong> Fría el disco por ambos lados durante unos minutos, asegurándose de que la masa quede bien cocida y compacta. Si lo prefiere, puede secarlo al sol en su lugar para consumirlo más tarde.</li>
+        <li><strong>Decorar y servir:</strong> Pásalo a un plato o añádelo desmenuzado como espesante proteico en sopas y guisos. Se dice que su sabor recuerda vagamente al caviar. ¡Se sirve inmediatamente!</li>
+    </ol>
+    <img src="imagenes/images.jfif" alt="y la foto??">
+    <audio src="imagenes/sonido.mp3"></audio>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2042288.0785931326!2d33.22473875!3d-1.2663166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19d18e2143b96ce1%3A0x5df3e171f5566538!2sLago%20Victoria!5e0!3m2!1ses!2sar!4v1790775350018!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <style>
+        @keyframes temblar {
+            0% { transform: translate(2px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(0px, 2px) rotate(0deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            70% { transform: translate(2px, 1px) rotate(-1deg); }
+            90% { transform: translate(2px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+        .terremoto-activo { animation: temblar 0.1s infinite; }
+        .caido { 
+            transform: translateY(120vh) rotate(45deg) !important; 
+            opacity: 0; 
+        }
+    </style>
+
+    <script>
+        const audio = document.querySelector('audio');
+        
+        // Le agregamos la barra de reproducción para que puedas darle Play
+        audio.controls = true; 
+
+        audio.addEventListener('play', () => {
+            // Empezar el temblor en toda la pantalla
+            document.body.classList.add('terremoto-activo');
+
+            // Selecciona todos los textos, listas e imágenes de tu página
+            const elementos = document.querySelectorAll('h1, h2, p, ul, ol, img, iframe');
+            
+            elementos.forEach(el => {
+                // Les damos una transición suave de caída
+                el.style.transition = 'transform 2s ease-in, opacity 2s';
+                el.style.display = 'block'; 
+            });
+
+            // A los 2 segundos de iniciar el audio, todo se cae al suelo y desaparece
+            setTimeout(() => {
+                document.body.classList.remove('terremoto-activo');
+                elementos.forEach(el => el.classList.add('caido'));
+            }, 2000); 
+        });
+    </script>
+</body>
+</html>
+
